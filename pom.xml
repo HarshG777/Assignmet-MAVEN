@@ -73,18 +73,20 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.10</version>
                 <executions>
+                    <!-- Prepare JaCoCo agent before tests -->
                     <execution>
                         <id>prepare-agent</id>
-                        <phase>test</phase> <!-- Runs during the test phase to gather coverage data -->
+                        <phase>test</phase>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
+                    <!-- Generate JaCoCo report after tests -->
                     <execution>
                         <id>generate-report</id>
-                        <phase>post-integration-test</phase> <!-- Runs after the tests finish -->
+                        <phase>post-integration-test</phase>
                         <goals>
-                            <goal>report</goal> <!-- Generate the report -->
+                            <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
