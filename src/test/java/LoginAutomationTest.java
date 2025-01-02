@@ -19,7 +19,7 @@ public class LoginAutomationTest {
             // Locate the username and password fields 
             WebElement usernameField = driver.findElement(By.id("username")); 
             WebElement passwordField = driver.findElement(By.id("password")); 
-            WebElement loginButton = driver.findElement(By.id("loginButton")); 
+            WebElement loginButton = driver.findElement(By.id("submit")); 
  
             // Perform login 
             usernameField.sendKeys("testUser"); 
