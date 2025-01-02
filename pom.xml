@@ -72,21 +72,23 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.10</version>
                 <executions>
-                    <!-- This prepares the agent during the test phase to collect coverage data -->
+                    <!-- Execution for collecting coverage data -->
                     <execution>
+                        <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                    <!-- This generates the Jacoco report after the tests are executed -->
+                    <!-- Execution for generating the coverage report -->
                     <execution>
+                        <id>generate-report</id>
                         <goals>
                             <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <!-- Path where the Jacoco data will be stored -->
+                    <!-- Path where the JaCoCo data will be stored -->
                     <outputDirectory>target/site/jacoco</outputDirectory>
                     <!-- Path to store the exec file -->
                     <dataFile>target/jacoco.exec</dataFile>
