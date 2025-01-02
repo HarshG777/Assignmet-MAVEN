@@ -65,21 +65,33 @@
                     </includes>
                 </configuration>
             </plugin>
-                  <!-- JaCoCo Maven Plugin -->
-        <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.10</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <!-- Code coverage during test phase -->
-                        <goal>prepare-agent</goal>
-                        <goal>report</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
+
+            <!-- JaCoCo Maven Plugin -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
+                <executions>
+                    <!-- This prepares the agent during the test phase to collect coverage data -->
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <!-- This generates the Jacoco report after the tests are executed -->
+                    <execution>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Path where the Jacoco data will be stored -->
+                    <outputDirectory>target/site/jacoco</outputDirectory>
+                    <!-- Path to store the exec file -->
+                    <dataFile>target/jacoco.exec</dataFile>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
