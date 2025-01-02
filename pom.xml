@@ -73,15 +73,16 @@
                 <version>0.8.10</version>
                 <executions>
                     <execution>
-                        <id>default-prepare-agent</id>
+                        <id>prepare-agent</id>
                         <goals>
-                            <goal>prepare-agent</goal> <!-- Prepare JaCoCo agent -->
+                            <goal>prepare-agent</goal>
                         </goals>
                     </execution>
                     <execution>
-                        <id>default-report</id>
+                        <id>generate-report</id>
+                        <phase>verify</phase>
                         <goals>
-                            <goal>report</goal> <!-- Generate the report -->
+                            <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
