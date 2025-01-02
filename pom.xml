@@ -75,14 +75,14 @@
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
-                        <phase>initialize</phase> <!-- Runs before tests -->
+                        <phase>test</phase> <!-- Runs during the test phase to gather coverage data -->
                         <goals>
-                            <goal>prepare-agent</goal> <!-- Prepare JaCoCo agent -->
+                            <goal>prepare-agent</goal>
                         </goals>
                     </execution>
                     <execution>
                         <id>generate-report</id>
-                        <phase>verify</phase> <!-- Runs after tests -->
+                        <phase>post-integration-test</phase> <!-- Runs after the tests finish -->
                         <goals>
                             <goal>report</goal> <!-- Generate the report -->
                         </goals>
