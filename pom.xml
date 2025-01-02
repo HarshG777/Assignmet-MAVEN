@@ -16,6 +16,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
         <selenium.version>3.141.59</selenium.version>
+        <spring.boot.version>2.5.4</spring.boot.version> <!-- Added Spring Boot Version -->
     </properties>
 
     <dependencies>
@@ -40,7 +41,7 @@
             <version>${selenium.version}</version>
         </dependency>
     
-         <!-- Spring Boot Starter Web Dependency -->
+        <!-- Spring Boot Starter Web Dependency -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -68,7 +69,7 @@
             <version>${spring.boot.version}</version>
             <scope>test</scope>
         </dependency>
-</dependencies>
+    </dependencies>
 
     <build>
         <plugins>
@@ -94,21 +95,22 @@
                     </includes>
                 </configuration>
             </plugin>
-                  <!-- JaCoCo Maven Plugin -->
-        <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.10</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <!-- Code coverage during test phase -->
-                        <goal>prepare-agent</goal>
-                        <goal>report</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
+
+            <!-- JaCoCo Maven Plugin -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!-- Code coverage during test phase -->
+                            <goal>prepare-agent</goal>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
