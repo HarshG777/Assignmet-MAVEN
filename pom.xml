@@ -39,7 +39,7 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-    </dependencies>
+    
          <!-- Spring Boot Starter Web Dependency -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -68,6 +68,7 @@
             <version>${spring.boot.version}</version>
             <scope>test</scope>
         </dependency>
+</dependencies>
 
     <build>
         <plugins>
