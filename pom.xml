@@ -51,11 +51,10 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
-                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
                 </configuration>
             </plugin>
 
-            <!-- Surefire Plugin for Running Tests -->
+            <!-- Surefire Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -66,33 +65,21 @@
                     </includes>
                 </configuration>
             </plugin>
-
-            <!-- JaCoCo Maven Plugin -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.10</version>
-                <executions>
-                    <!-- Prepare JaCoCo agent before tests -->
-                    <execution>
-                        <id>prepare-agent</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <!-- Generate JaCoCo report after tests -->
-                    <execution>
-                        <id>generate-report</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
+                  <!-- JaCoCo Maven Plugin -->
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.10</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <!-- Code coverage during test phase -->
+                        <goal>prepare-agent</goal>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
         </plugins>
     </build>
-
 </project>
