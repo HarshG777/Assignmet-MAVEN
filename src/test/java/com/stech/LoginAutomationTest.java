@@ -18,7 +18,7 @@ public class LoginAutomationTest {
 
         try {
             // Navigate to the login page
-            driver.get("F:\\WorldLine\\L2 Traning\\SonarQube\\MavenLogin\\src\\main\\resources\\templates\\login.html"); // Replace with actual URL
+            driver.get("http://localhost:8080"); // Replace with actual URL
 
             // Locate the username and password fields and login button
             WebElement usernameField = driver.findElement(By.id("username"));
