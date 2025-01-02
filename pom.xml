@@ -75,6 +75,7 @@
                     <!-- Execution for collecting coverage data -->
                     <execution>
                         <id>prepare-agent</id>
+                        <phase>test</phase> <!-- Ensure it's in the test phase -->
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
@@ -82,6 +83,7 @@
                     <!-- Execution for generating the coverage report -->
                     <execution>
                         <id>generate-report</id>
+                        <phase>verify</phase> <!-- Ensure it's after test phase -->
                         <goals>
                             <goal>report</goal>
                         </goals>
