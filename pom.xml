@@ -67,35 +67,25 @@
             </plugin>
 
             <!-- JaCoCo Maven Plugin -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.10</version>
-                <executions>
-                    <!-- Execution for collecting coverage data -->
-                    <execution>
-                        <id>prepare-agent</id>
-                        <phase>test</phase> <!-- Ensure it's in the test phase -->
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <!-- Execution for generating the coverage report -->
-                    <execution>
-                        <id>generate-report</id>
-                        <phase>verify</phase> <!-- Ensure it's after test phase -->
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- Path where the JaCoCo data will be stored -->
-                    <outputDirectory>target/site/jacoco</outputDirectory>
-                    <!-- Path to store the exec file -->
-                    <dataFile>target/jacoco.exec</dataFile>
-                </configuration>
-            </plugin>
+            <build>
+    <plugins>
+        <!-- JaCoCo Plugin -->
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.10</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal> <!-- Prepare JaCoCo agent -->
+                        <goal>report</goal>        <!-- Generate the report -->
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+
         </plugins>
     </build>
 </project>
